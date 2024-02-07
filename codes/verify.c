@@ -12,27 +12,26 @@ double calculateProduct(int n, double a, double r) {
 
 int main() {
     // Given values
-    double a, b, r;
+    double x0, xn, r;
     int n;
 
     // Input the values of a, b, r, and n
     printf("Enter the first term (a): ");
-    scanf("%lf", &a);
+    scanf("%lf", &x0);
 
     printf("Enter the nth term (b): ");
-    scanf("%lf", &b);
+    scanf("%lf", &xn);
 
-    printf("Enter the common ratio (r): ");
-    scanf("%lf", &r);
 
     printf("Enter the number of terms (n): ");
     scanf("%d", &n);
 
+    r= pow((xn/x0),(1.0/(n-1)));
     // Calculate P and (ab)^n
-    double P = calculateProduct(n, a, r);
-    double ab_pow_n = pow(a * b, n);
-
-    // Check if P^2 equals (ab)^n
+   double P = calculateProduct(n, x0, r);
+    double ab_pow_n = pow(x0*xn,(double)n);
+          printf("%lf\n",ab_pow_n);
+          printf("%lf\n",P);    // Check if P^2 equals (ab)^n
     if (pow(P, 2) == ab_pow_n) {
         printf("The statement P^2 = (ab)^n is verified.\n");
     } else {
@@ -41,4 +40,3 @@ int main() {
 
     return 0;
 }
-
